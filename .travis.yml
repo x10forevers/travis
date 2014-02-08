@@ -30,13 +30,3 @@ script: mvn install -Pintegration-tests -Dandroid.device=test
   
 notifications:
   email: android.x10f@gmail.com
-
-before_install:
-  - repo init -u https://github.com/MoKee/android -b kk_mkt
-  - repo sync
-  - cd device
-  - mkdir samsung
-  - cd samsung
-  - git clone https://github.com/x10f/android_device_samsung_i9500 -b cm-11.0 i9500
-  - . build/envsetup.sh
-  - brunch mk_i9500-userdebug
